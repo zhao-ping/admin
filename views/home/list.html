@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{template "template/header.html"}}
+    <title>文章列表</title>
+</head>
+
+<body>
+    <div id="list" class="full-screen">
+        <mt-loadmore :bottom-method="getList" :bottom-all-loaded="allLoaded" ref="loadmore" :auto-fill="autoFill">
+            <a v-for="item in list" href="/detail" class="bb-1 p-tb-10 p-lr-15 display-b">
+                <p class="text-16 mb-5" v-text="item.Title"></p>
+                <p class="text-14 mb-5" v-text="item.Content"></p>
+                <div class="text-12 text-80 ub ub-ac">
+                    <p class="ub-f1" v-text="'作者：'+item.Name"></p>
+                    <time v-text="item.Created"></time>
+                </div>
+            </a>
+            <p v-show="allLoaded" class="p-15 text-center bg-f0">数据已经全部加载完毕！</p>
+        </mt-loadmore>
+    </div>
+    <script>
+        var list = new Vue({
+            el: " #list ",
+            data: function() {
+                return {
+                    autoFill: false,
+                    allLoaded: false,
+                    offset: 1,
+                    limit: 10,
+                    list: []
+                }
+            },
+            methods: {
+                getList: function() {
+                    var t = this;
+                    $.ajax({
+                        url: "/getArticleList ",
+                        type: "post",
+                        data: {
+                            offset: t.offset,
+                            limit: t.limit
+                        },
+                        success: function(d) {
+                            t.list = t.list.concat(d.Data);
+                            if (d.Code == 0) {
+                                t.offset++;
+                            } else if (d.Code == 1) {
+                                t.allLoaded = true;
+                            }
+                            t.$refs.loadmore.onBottomLoaded();
+                        }
+                    })
+                }
+            },
+            created: function() {
+                this.getList();
+            }
+        })
+    </script>
+</body>
+
+</html>

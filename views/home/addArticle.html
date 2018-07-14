@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{template "template/header.html"}}
+    <title>添加文章</title>
+</head>
+
+<body>
+    <div id="addArticle">
+        <header class="bg-red text-white text-center text-16 p-10">添加文章</header>
+        <div class="p-15">
+            <p class="mb-15">
+                <input type="phone" name="title" v-model="title" placeholder="请输入标题">
+            </p>
+            <p class="mb-15">
+                <textarea name="content" v-model="content" placeholder="请输入内容" rows="10"></textarea>
+            </p>
+            <!-- <p class="mb-15">
+            <input type="file" name="attachment"> 
+        </p>-->
+            <button class="btn" type="button" v-on:click="addArticle()">保 存</button>
+        </div>
+    </div>
+    <script>
+        var blog = new Vue({
+            el: "#addArticle",
+            data: function() {
+                return {
+                    title: null,
+                    content: null
+                }
+            },
+            methods: {
+                addArticle: function() {
+                    var t = this;
+                    if (!thareIs(t.title)) {
+                        t.$toast("请输入标题");
+                        return false;
+                    }
+                    if (!thareIs(t.content)) {
+                        t.$toast("请输入文章内容！");
+                        return false;
+                    }
+                    var formdata = {
+                        title: t.title,
+                        content: t.content,
+                    }
+                    $.ajax({
+                        url: "/addArticle",
+                        data: JSON.stringify(formdata),
+                        type: "post",
+                        processData: false, // 告诉jQuery不要去处理发送的数据
+                        contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+                        success: function(d) {
+                            console.log(d)
+                        }
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

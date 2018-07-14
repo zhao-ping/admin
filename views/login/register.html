@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    {{template "template/header.html"}}
+    <title>注册</title>
+</head>
+
+<body>
+    <div id="register" class="full-screen ub ub-ver">
+        <div class="ub-f1"></div>
+        <form class="p-15" id="registerForm" action="/register" method="POST" onsubmit="return register()">
+            <p class="mb-15">
+                <input type="phone" name="phone" placeholder="请输入您的电话号码">
+            </p>
+            <p class="mb-15">
+                <input type="text" name="name" placeholder="请输入您的昵称">
+            </p>
+            <p class="mb-15">
+                <input type="password" name="password" placeholder="请输入登录密码">
+            </p>
+            <button type="submit" class="btn mt-20">注 册</button>
+        </form>
+        <p class="text-14 p-15">已有账号<a href="/login" class="text-blue">立即登录</a></p>
+        <div class="ub-f1"></div>
+    </div>
+    <script type="text/javascript">
+        var reg = new Vue({
+            el: "#register",
+            data: function() {
+                return {}
+            },
+            methods: {
+
+            }
+        })
+
+        function register() {
+            if (!istel($("input[name=phone]").val())) {
+                reg.$toast("请输入正确的电话号码");
+                return false;
+            }
+            if (!thareIs($("input[name=name]").val())) {
+                reg.$toast("请输入用户名");
+                return false;
+            }
+            if (!thareIs($("input[name=password]").val())) {
+                reg.$toast("请输入密码");
+                return false;
+            }
+            return true
+        }
+    </script>
+</body>
+
+</html>

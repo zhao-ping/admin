@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{template "template/header.html"}}
+    <title>web 分页</title>
+</head>
+
+<body>
+    {{range .Lists}}
+    <a href="/detail" class="bb-1 p-tb-10 p-lr-15 display-b">
+        <p class="text-16 mb-5">{{.Title}}</p>
+        <p class="text-14 mb-5">{{.Content}}</p>
+        <div class="text-12 text-80 ub ub-ac">
+            <p class="ub-f1">作者：{{.Auther}}</p>
+            <time>{{.Created}}</time>
+        </div>
+    </a>
+    {{end}} {{str2html .PageStr}}
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+@import url("/static/css/base.css");
+@import url("//at.alicdn.com/t/font_703349_4kmhkodk1pe.css");
+html,
+body {
+    font-size: 1.4rem;
+    color: #323232;
+}
+
+a {
+    color: #323232;
+}
+
+.logo {
+    width: 15rem;
+}
+
+.bg-f0 {
+    background: #f0f0f0;
+}
+
+.bg-fa {
+    background: #fafafa;
+}
+
+.bg-red {
+    background: #e43c3e;
+}
+
+.text-red {
+    color: #e43c3e;
+}
+
+.text-blue {
+    color: #006da0;
+}
+
+.bg-blue {
+    background: #006da0;
+}
+
+.text-green {
+    color: #259b24;
+}
+
+.text-orange {
+    color: #f6a200;
+}
+
+.text-80 {
+    color: #808080;
+}
+
+.text-32 {
+    color: #323232;
+}
+
+.pb-20 {
+    padding-bottom: 2rem;
+}
+
+.p-lr-5 {
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.timeBox {
+    padding: 0.5rem 1rem;
+    line-height: 2rem;
+    border-radius: 1.5rem;
+}
+
+.sfBox {
+    padding: 1rem;
+}
+
+.sfBox .f {
+    width: 10%;
+    float: left;
+}
+
+.tb {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tb td {
+    height: 3.5rem;
+}
+
+.tb.tbb th {
+    background: #F4F7FF;
+    text-align: center;
+    height: 3.5rem;
+    border: 1px solid #e5e5e5;
+}
+
+.tb.tbb td {
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    font-weight: normal;
+}
+
+.tb-b td {
+    height: 3.5rem;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 1.5rem;
+}
+
+.tb-bg td {
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    height: 4rem;
+}
+
+.tb-bg tr:nth-child(4n+1),
+.tb-bg tr:nth-child(4n+2) {
+    background: #f4f7ff;
+}
+
+.tb-bg tr:nth-child(4n+3),
+.tb-bg tr:nth-child(4n) {
+    background: #fff;
+}
+
+.ub .ub-45 {
+    width: 4.5rem;
+    flex-grow: none;
+}
+
+.line-h-40 {
+    line-height: 4rem;
+}
+
+select {
+    height: 3rem;
+    padding: 0 1rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+}
+
+footer.fixed-bottom .ub-f1 {
+    color: #323232;
+}
+
+footer.fixed-bottom .ub-f1.active {
+    color: #E43C3E;
+}
+
+footer.fixed-bottom .ub-f1 p {
+    font-size: 1.2rem;
+}
+
+.avatar40 {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.userCenter {
+    background: url(../images/userbg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+input {
+    width: 100%;
+    padding: 1.5rem;
+    height: 4rem;
+    line-height: 2rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    line-height: 2rem;
+    padding: 1rem;
+}
+
+.btn {
+    height: 5rem;
+    line-height: 5rem;
+    background: #E43C3E;
+    border-radius: 3px;
+    display: block;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 1.6rem
+}
+
+.full-screen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.pageBox {
+    padding: 10px;
+    clear: both;
+}
+
+.pageBox .page {
+    float: right;
+}
+
+.pageBox .page a,
+.pageBox .page span {
+    float: left;
+    display: block;
+    margin: 3px;
+    line-height: 3rem;
+    height: 3rem;
+}
+
+.pageBox .page a {
+    background: #fff;
+    color: #323232;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.pageBox .page a.active {
+    background: #ddd;
+}
